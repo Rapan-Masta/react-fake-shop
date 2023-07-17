@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { Header } from './Header'
 
 // //without JSX
 // const title = React.createElement('h1', { id: 'title' }, 'Hello React')
@@ -14,10 +15,6 @@ import ReactDOM from 'react-dom/client'
 //         <p>Text 3</p>
 //     </div>
 // )
-
-const Header = () => {
-    return <h1>Hello React</h1>
-}
 
 const Content = () => {
     return (
