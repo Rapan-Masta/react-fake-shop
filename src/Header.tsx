@@ -3,10 +3,11 @@ type Props = {
     year: number
 }
 
-const Header = (props: Props) => {
+//Destructuring props
+const Header = ({ title, year }: Props) => {
     return (
         <h1>
-            Hello {props.title}, Year = {props.year}
+            Hello {title}, Year = {year}
         </h1>
     )
 }
