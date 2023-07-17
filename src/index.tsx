@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Header from './Header'
+import Article from './Article'
 
 // //without JSX
 // const title = React.createElement('h1', { id: 'title' }, 'Hello React')
@@ -50,5 +51,15 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
     <React.StrictMode>
         <App />
+        <Article
+            title="KEKES"
+            description="lorem kekekekkekekeks"
+            author="Monkey"
+        />
+        <Article
+            title="HEHES"
+            description="lorem blalalalalalala"
+            author="Chess"
+        />
     </React.StrictMode>
 )
