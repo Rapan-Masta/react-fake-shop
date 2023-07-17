@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { Header } from './Header'
+import Header from './Header'
 
 // //without JSX
 // const title = React.createElement('h1', { id: 'title' }, 'Hello React')
@@ -40,7 +40,7 @@ const Content = () => {
 const App = () => {
     return (
         <React.Fragment>
-            <Header />
+            <Header title="KEKES" year={2007} />
             <Content />
         </React.Fragment>
     )
