@@ -2,4 +2,8 @@
     background-color: purple;
     color: white;
     padding: 15px;
+
+    &:hover {
+        background-color: green;
+    }
 }

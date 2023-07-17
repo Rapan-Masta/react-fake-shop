@@ -1,4 +1,4 @@
-import './Article.css'
+import './Article.scss'
 
 type Props = {
     title: string
