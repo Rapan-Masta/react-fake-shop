@@ -1,5 +1,7 @@
 import { Grid, Typography } from '@mui/material'
 import ProductListItem from './ProductListItem'
+import productsArray from 'utils/productsArray'
+
 type Props = {}
 const ProductList = (props: Props) => {
     return (
@@ -13,33 +15,17 @@ const ProductList = (props: Props) => {
                 Product List
             </Typography>
             <Grid container spacing={4}>
-                <Grid item xs={12} sm={6} md={4}>
-                    <ProductListItem
-                        title="iPhone 14 Pro"
-                        description="This is iPhone 14 Pro"
-                        type="phone"
-                        capacity="64"
-                        price={1000}
-                    />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                    <ProductListItem
-                        title="iPhone 13"
-                        description="This is iPhone 13"
-                        type="phone"
-                        capacity="32"
-                        price={800}
-                    />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                    <ProductListItem
-                        title="iPhone 12 Extra"
-                        description="This is iPhone 12 Extra"
-                        type="phone"
-                        capacity="16"
-                        price={500}
-                    />
-                </Grid>
+                {productsArray.map((product, i) => (
+                    <Grid item xs={12} sm={6} md={4} key={i}>
+                        <ProductListItem
+                            title={product.title}
+                            description={product.description}
+                            type={product.type}
+                            capacity={product.capacity}
+                            price={product.price}
+                        />
+                    </Grid>
+                ))}
             </Grid>
         </div>
     )
