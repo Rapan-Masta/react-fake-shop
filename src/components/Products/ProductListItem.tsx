@@ -9,6 +9,7 @@ type Props = {
     capacity: string
     price: number
     image: string
+    addProductToCard: (count: number, price: number) => void
 }
 
 const ProductListItem = ({
@@ -18,6 +19,7 @@ const ProductListItem = ({
     capacity,
     price,
     image,
+    addProductToCard,
 }: Props) => {
     const [count, setCount] = useState<number>(1)
 
@@ -56,7 +58,12 @@ const ProductListItem = ({
                     </Button>
                 </div>
                 <div className="btns-wrap">
-                    <Button variant="outlined">Add to cart</Button>
+                    <Button
+                        variant="outlined"
+                        onClick={() => addProductToCard(count, price)}
+                    >
+                        Add to cart
+                    </Button>
                 </div>
             </CardContent>
         </Card>
