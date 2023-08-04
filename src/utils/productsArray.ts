@@ -1,4 +1,4 @@
-type Product = {
+export type Product = {
     id: number
     image: string
     title: string
@@ -55,7 +55,7 @@ const productsArray:Product[] = [
         image: '/images/Iphone-red.webp',
     },
     {
-        id: 6,
+        id: 22,
         title: 'iPhone 15 Pro',
         description: 'This is iPhone 15 Pro',
         type: 'phone',
@@ -64,5 +64,13 @@ const productsArray:Product[] = [
         image: '/images/Iphone-white.webp',
     },
 ]
+
+export const getProductsObject = (array:Product[]) => array.reduce((object, product) => ({
+    ...object,
+    [product.id]:product
+}), {})
+
+const test = getProductsObject(productsArray);
+console.log(test)
 
 export default productsArray
