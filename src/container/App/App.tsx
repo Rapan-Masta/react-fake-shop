@@ -6,6 +6,9 @@ import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from 'container/pages/Home'
 import CartPage from 'container/pages/Cart/CartPage'
+import AboutUsPage from 'container/pages/About/AboutUsPage'
+import PaymantPage from 'container/pages/Paymant/PaymantPage'
+import ShippingPage from 'container/pages/Shipping/ShippingPage'
 
 type Props = {}
 
@@ -36,7 +39,13 @@ const App = (props: Props) => {
                         path="/"
                         element={<Home addProductToCard={addProductToCard} />}
                     ></Route>
-                    <Route path="/cart" element={<CartPage />} />
+                    <Route path="/abous-us" element={<AboutUsPage />} />
+                    <Route path="/payment" element={<PaymantPage />} />
+                    <Route path="/shipping" element={<ShippingPage />} />
+                    <Route
+                        path="/cart"
+                        element={<CartPage productsInCart={productsInCart} />}
+                    />
                 </Routes>
             </Container>
         </StyledEngineProvider>
