@@ -1,6 +1,7 @@
-import { Typography } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import CartTotal from 'components/Cart/CartTotal'
 import CartProductList from 'components/Cart/CartProductList'
+import CartProductListItemExtended from 'components/Cart/CartProductListItemExtended'
 
 type Props = {
     productsInCart: {
@@ -14,9 +15,16 @@ const CartPage = ({ productsInCart }: Props) => {
             <Typography variant="h4" component="h1" sx={{ margin: '30px 0' }}>
                 Card
             </Typography>
+            <div>
+                <Grid container spacing={4}>
+                    <CartProductList
+                        productsInCart={productsInCart}
+                        CartItem={CartProductListItemExtended}
+                    ></CartProductList>
+                </Grid>
 
-            <CartProductList productsInCart={productsInCart}></CartProductList>
-            <CartTotal productsInCart={productsInCart}></CartTotal>
+                <CartTotal productsInCart={productsInCart}></CartTotal>
+            </div>
         </div>
     )
 }
