@@ -9,6 +9,7 @@ import CartPage from 'container/pages/Cart/CartPage'
 import AboutUsPage from 'container/pages/About/AboutUsPage'
 import PaymantPage from 'container/pages/Paymant/PaymantPage'
 import ShippingPage from 'container/pages/Shipping/ShippingPage'
+import { Omit, omit } from 'lodash'
 
 type Props = {}
 
@@ -30,20 +31,13 @@ const App = (props: Props) => {
     }
 
     const removeProductFromCart = (id: number) => {
-        setProductsInCart((prevState) => {
-            let prevProductsInCart = { ...prevState }
-            delete prevProductsInCart[id]
-            return prevProductsInCart
-        })
+        setProductsInCart((prevState) => omit(prevState, [id]))
     }
 
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header productsInCart={productsInCart} />
-            <button onClick={() => removeProductFromCart(1)}>
-                Remove product
-            </button>
             <Container>
                 <Routes>
                     <Route
@@ -55,7 +49,12 @@ const App = (props: Props) => {
                     <Route path="/shipping" element={<ShippingPage />} />
                     <Route
                         path="/cart"
-                        element={<CartPage productsInCart={productsInCart} />}
+                        element={
+                            <CartPage
+                                productsInCart={productsInCart}
+                                removeProductFromCart={removeProductFromCart}
+                            />
+                        }
                     />
                 </Routes>
             </Container>
