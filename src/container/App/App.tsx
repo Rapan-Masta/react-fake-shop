@@ -9,7 +9,7 @@ import CartPage from 'container/pages/Cart/CartPage'
 import AboutUsPage from 'container/pages/About/AboutUsPage'
 import PaymantPage from 'container/pages/Paymant/PaymantPage'
 import ShippingPage from 'container/pages/Shipping/ShippingPage'
-import { Omit, omit } from 'lodash'
+import { omit } from 'lodash'
 
 type Props = {}
 
